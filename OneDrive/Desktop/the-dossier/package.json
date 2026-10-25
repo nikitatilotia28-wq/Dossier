@@ -1,0 +1,11 @@
+{
+  "name": "the-dossier",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash start_streamlit.sh"
+  },
+  "dependencies": {
+    "mammoth": "^1.12.1"
+  }
+}

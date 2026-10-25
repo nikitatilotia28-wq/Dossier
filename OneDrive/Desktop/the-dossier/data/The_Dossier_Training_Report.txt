@@ -1,0 +1,193 @@
+THE DOSSIER
+PROJECT DESIGN AND IMPLEMENTATION PROGRESS REPORT
+
+Project Title: The Dossier – A Contract Checking and Tenant Awareness Tool for Mumbai Bachelor Rentals
+
+Prepared by: [Student Name]
+Enrollment Number: [Enrollment Number]
+Program/Branch: [Program / Branch]
+Semester: [Semester]
+Institute: [Institute Name]
+Mentor: [Mentor Name]
+Training Period: [Start Date] to [End Date]
+
+1. PROBLEM STATEMENT
+
+Many bachelors renting homes in Mumbai sign leave and licence or rental agreements without fully understanding them. An agreement may contain unclear deposit rules, short notice periods, one-sided termination rights, large repair deductions, automatic renewal, or missing details about house rules. A tenant can search each term online or ask a chatbot, but that information is general and is not connected to the actual agreement being signed.
+
+The Dossier solves this problem by checking the uploaded agreement, showing the exact wording that may need attention, explaining it in simple language, and giving the tenant a short list of questions to ask the landlord before signing. It is a first-check tool and not a replacement for a lawyer.
+
+2. PROJECT OVERVIEW
+
+The Dossier is a web application for bachelors and other tenants renting in Mumbai. It helps a user understand a rental agreement before signing it. The user uploads a PDF, Word document, or text file. The system reads the document, checks it against a rental agreement rulebook, and presents the result in a simple dashboard.
+
+The application is focused on a practical decision: “What should I clarify before I sign?”
+
+3. WORK COMPLETED
+
+• Created a working Streamlit web application.
+• Added PDF, DOCX, and TXT upload support.
+• Built a rule-based checking engine for rental agreement risks.
+• Added checks for deposit deductions, unlimited liability, indemnity, automatic renewal, termination, non-compete wording, assignment, repairs, house rules, and governing law.
+• Added SQLite storage for scan history and review summaries.
+• Designed a before-signing dashboard for Mumbai tenants.
+• Added simple learning content and legal term explanations.
+• Created a sample Mumbai bachelor rental agreement for testing.
+• Added a downloadable report for the tenant, mentor, or lawyer.
+
+4. MAIN FEATURES
+
+4.1 Dashboard
+
+The dashboard gives the tenant a clear starting point. It explains what the application does, shows the before-signing checklist, and provides direct actions such as checking an agreement, learning the basics, and viewing previous checks.
+
+4.2 Scan Contract
+
+The user can upload a rental agreement or use the sample agreement. The system extracts the text and checks it against the rulebook. The result shows the risk level, number of findings, exact wording, simple meaning, and suggested next step.
+
+4.3 Before-Signing Checklist
+
+The dashboard encourages the tenant to check:
+
+• Is the deposit amount and refund process written clearly?
+• Is there a fair notice period for both parties?
+• Who pays for repairs and damage?
+• Can the rent be increased without notice?
+• Are all occupants and house rules mentioned?
+• Is police or society verification explained?
+• Are move-in photos or an inventory list attached?
+
+4.4 History
+
+Previous scans are stored locally in SQLite. The user can review earlier results and compare agreements later.
+
+4.5 Learning Support
+
+The learning section explains common terms such as deposit, indemnity, liability, termination, breach, jurisdiction, and force majeure in simple language. The future version will connect this guidance directly to each flagged clause.
+
+4.6 Report Download
+
+The user can download a plain-language report and discuss it with the landlord, mentor, lawyer, or family member.
+
+5. SYSTEM WORKFLOW
+
+User uploads agreement -> text is extracted -> rental rulebook checks the text -> findings are grouped by risk -> dashboard explains each finding -> questions for landlord are prepared -> review is saved -> report can be downloaded.
+
+6. MODULES
+
+Document Upload: Accepts PDF, DOCX, and TXT rental agreements.
+Text Extraction: Reads the text from uploaded files.
+Rental Rulebook: Checks common risks faced by Mumbai tenants.
+Risk Summary: Shows high, moderate, and low findings.
+Before-Signing Dashboard: Shows practical actions for the tenant.
+Learning Support: Explains legal words in simple terms.
+History: Saves earlier reviews.
+Report Export: Creates a report for discussion and record keeping.
+
+7. TECHNOLOGIES USED
+
+Programming Language: Python
+Framework: Streamlit
+Database: SQLite
+Document Reading: pypdf and python-docx
+PDF Creation: ReportLab
+Other Technologies: HTML, CSS, regular expressions, session state, browser testing
+
+8. IMPLEMENTATION METHOD
+
+The application uses a transparent rule-based method. Each rule contains a clause type, risk level, words or patterns to look for, a simple explanation, and a recommendation. The extracted document text is compared with these patterns. When a risky pattern is found, the matching sentence is saved and shown to the user. Some rules also check whether an important protection is missing.
+
+This method is useful for a student project because the result can be explained clearly. The system does not pretend to replace a lawyer or make a final legal decision.
+
+9. DATABASE DESIGN
+
+SQLite stores the document name, scan date, risk band, number of findings, and the result details. This allows users to see previous reviews without uploading the same document again. The prototype does not use real personal details in the sample document.
+
+10. TESTING
+
+• Tested the Mumbai bachelor rental agreement sample.
+• Checked detection of risky clauses.
+• Checked that exact matching wording is displayed.
+• Tested upload controls and sample agreement flow.
+• Tested dashboard navigation.
+• Tested report download.
+• Tested short or empty input handling.
+• Tested the application in a desktop browser.
+
+11. CHALLENGES AND SOLUTIONS
+
+Challenge: Legal language is difficult for non-law students.
+Solution: Used short explanations, examples, and questions that a tenant can ask the landlord.
+
+Challenge: PDF and Word files store text differently.
+Solution: Added separate extraction support for PDF, DOCX, and TXT files.
+
+Challenge: General articles are not enough after uploading a real agreement.
+Solution: Connected the result to the exact clause found in the uploaded document.
+
+Challenge: Rule-based checking may miss a clause written in different words.
+Solution: Clearly showed the system limitation and kept the original agreement visible for human review.
+
+Challenge: A warning alone does not tell the tenant what to do.
+Solution: Added a before-signing checklist and practical next steps.
+
+Challenge: Rental documents may contain private information.
+Solution: Used local SQLite storage in the prototype and avoided sending documents to an outside service.
+
+12. REAL-LIFE USE
+
+A bachelor in Mumbai receives a rental agreement from a landlord or broker. Before signing or paying the deposit, the tenant uploads it to The Dossier. The system may identify that the landlord can deduct any amount from the deposit, that only the landlord can terminate the agreement, or that repairs are not clearly assigned. The tenant then receives simple questions to ask before signing and can share the report with a mentor or lawyer.
+
+13. FUTURE WORK
+
+• Add direct “Ask the landlord” questions for each finding.
+• Add suggested replacement wording for negotiation.
+• Add Marathi and Hindi explanations.
+• Add a simple PDF tenant briefing report.
+• Add search and filters to History.
+• Test more Mumbai agreements with different deposits, notices, and society rules.
+• Review the rulebook with a law mentor.
+• Add secure login and protected documents for deployment.
+
+14. SKILLS LEARNED
+
+Technical skills:
+• Python and Streamlit application development.
+• PDF and Word text extraction.
+• Regular expressions and rule-based analysis.
+• SQLite database design.
+• File upload and report download handling.
+• Browser-based testing.
+
+Professional skills:
+• Converting a real-life problem into a software product.
+• Explaining technical work in simple language.
+• Understanding the limits of an automated tool.
+• Designing for Indian tenants and everyday users.
+• Choosing useful features instead of unnecessary pages.
+• Using original writing and public sources responsibly.
+
+15. REFERENCES
+
+1. India Code, The Indian Contract Act, 1872, https://www.indiacode.nic.in
+2. India Code, The Registration Act, 1908, https://www.indiacode.nic.in
+3. Maharashtra Department of Registration and Stamps, https://igrmaharashtra.gov.in
+4. Streamlit Documentation, https://docs.streamlit.io
+5. Python Documentation, https://docs.python.org
+6. pypdf Documentation, https://pypdf.readthedocs.io
+
+Plagiarism note: The project description, explanations, examples, and problem statement were written in original language for this project. Public government sources are listed for legal references. The report should be checked against the latest official law before final submission.
+
+16. EVALUATION
+
+Work Completion: ____________________
+Methodology Implementation: ____________________
+Tools and Technologies: ____________________
+Documentation: ____________________
+Understanding of Work: ____________________
+Total Marks: ____________________
+
+Student Signature: ____________________
+Mentor Signature: ____________________
+Institute Mentor Signature: ____________________
+Mentor Remarks: ____________________________________________________________

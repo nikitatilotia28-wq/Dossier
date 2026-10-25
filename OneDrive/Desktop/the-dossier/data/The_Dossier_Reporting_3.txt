@@ -1,0 +1,159 @@
+THE DOSSIER — REPORTING 3
+Advanced Implementation, Testing and Validation Progress Report
+
+Project: The Dossier – A Contract Checking and Tenant Awareness Tool for Mumbai Bachelor Rentals
+Student Name: Nikita Tilotia
+Enrollment Number: 23SE02ML209
+Program/Branch: BTECH AI/ML
+Semester: 7
+Contact: 7096205002
+Email: 23se02ml209@ppsu.ac.in
+Company/Organization: SOE
+Mentor: Mr. Vikas Chandra Sharma
+Training Period: 08/06/2026 to 03/10/2026
+
+1. PROJECT DESCRIPTION
+The Dossier is a simple rental-safety application for people looking for a home, shared flat, or roommate in Mumbai. It helps a user compare a locality, find a possible roommate, check a rental agreement, prepare questions for the landlord, record the condition of the home, track shared costs, and keep payment or repair evidence.
+
+The project currently focuses on Mumbai because it is a useful starting location with high rent, many students and working professionals, long travel times, shared flats, broker dealings, and common problems related to deposits, society rules and rental agreements. The project can later be expanded to other Indian cities.
+
+2. REAL-LIFE PROBLEM
+People often make rental decisions quickly. They may pay a token amount before checking the exact flat, trust verbal promises, misunderstand the rent split, fail to record old damage, or sign an agreement without understanding the important parts. Later, disputes may happen over deposits, repairs, visitors, maintenance, society rules, rent increases or the return of keys.
+
+The Dossier addresses this by bringing the main rental checks into one place. It does not claim that a property is legally safe, verify ownership, provide a valuation, or replace a lawyer. It is a first-check and evidence-organising tool.
+
+3. WORK COMPLETED AFTER REPORTING 2
+• Created a locality discovery map for selected Mumbai areas.
+• Added locality selection, budget and commute filters.
+• Added a locality decision snapshot with travel, rent-share, transport, monsoon, building and bachelor-society signals.
+• Added a clear label that locality and rent figures are demonstration estimates until verified data is connected.
+• Connected the selected locality to the Roommate Finder.
+• Added roommate filters for area, monthly share and move-in period.
+• Added sample compatibility information and request-to-connect actions.
+• Added safe-contact guidance without displaying phone numbers.
+• Added a Tenant Workspace with before-signing, landlord questions, move-in, move-out and shared-cost sections.
+• Added a shared monthly-cost calculator for rent, maintenance, electricity and internet.
+• Added repair and payment record fields and document/photo upload controls.
+• Simplified navigation by removing generic Learn and Rulebook pages from the main navigation.
+• Renamed History as My Rental Records.
+• Improved primary button contrast for clearer interaction.
+• Tested the updated pages in a browser and validated the updated Python files.
+
+4. APPLICATION MODULES
+A. Dashboard
+Shows the purpose of the application and directs the user to the most useful next action.
+
+B. Scan Contract
+Accepts a rental agreement and checks it using a transparent rulebook. It highlights possible issues such as deposit deductions, termination, liability, indemnity, automatic renewal, repairs and governing law. The user sees the matching wording and a simple explanation.
+
+C. Locality Decision Map / Property Guide
+The map uses selected Mumbai locality centres for comparison. Current sample localities are Andheri West, Powai, Vikhroli, Goregaon and Thane. The guide shows indicative rent and room-share ranges, transport, commute notes and practical signals. It also includes renting and buying checklists.
+
+D. Find Roommates
+Shows sample profiles that can be filtered by locality, budget and move-in period. A profile contains a first name, area, monthly share, move-in period, work or college area, room type, lifestyle description and sample fit percentage.
+
+E. Tenant Workspace
+Contains a before-signing checklist, questions to ask the landlord, a copy-ready message, move-in condition record, move-out handover checklist, shared-cost calculator, repair record and payment/receipt record.
+
+F. My Rental Records
+Keeps the existing scan history and review summaries. Future work will extend this into a complete record of agreements, receipts, repairs, photos and deposit status.
+
+5. SAMPLE DATA AND PERMISSIONS
+The names used in the current Roommate Finder are random demo names: Arjun, Neha, Rohan and Sameer. The sample locality data uses Mumbai areas and the sample rent ranges are illustrative estimates created only for demonstrating the interface.
+
+The project does not currently use real student profiles, real landlord profiles, live property listings, verified rent statistics or live user accounts. Real property listings, names, photos, maps, market rates or data from websites must not be copied or used without permission. A real release would need consent, privacy controls, terms of use, reporting tools, source attribution and permission from data providers. It should also show the source, date and confidence level for every market or locality insight.
+
+The map pins are locality centres for comparison. They are not exact property locations, property boundaries or proof of availability.
+
+6. TECHNOLOGIES USED
+• Python
+• Streamlit
+• SQLite
+• pypdf
+• python-docx
+• ReportLab
+• Regular expressions
+• HTML and CSS styling
+• Streamlit session state
+• Browser testing
+
+7. SYSTEM WORKFLOW
+User selects a Mumbai locality → reviews the locality decision snapshot → applies budget and commute filters → opens roommate matches → sends a safe connection request → uploads a rental agreement → receives plain-language findings → asks the landlord questions → records move-in condition, payments and repairs → completes move-out and deposit follow-up.
+
+8. IMPLEMENTATION DETAILS
+The project uses a transparent rule-based method for agreement review. Each rule contains a clause type, risk level, search pattern, explanation and recommendation. Extracted agreement text is compared with these rules. When a pattern is found, the matching wording is shown to the user.
+
+The Property Guide stores the selected locality in Streamlit session state and passes it to the Roommate Finder. The current application uses local demonstration data for map and roommate screens. Existing SQLite storage continues to save agreement reviews. Workspace records are currently interactive prototype records and need permanent database tables in the next phase.
+
+9. TESTING COMPLETED
+• Property Guide opened successfully.
+• Locality decision content and map appeared.
+• Selected locality was carried into Roommate Finder.
+• Area and budget filters worked on sample profiles.
+• Tenant Workspace tabs appeared correctly.
+• Shared-cost calculator controls appeared.
+• Updated Python files passed syntax validation.
+• Main routes were tested in a browser.
+• Demo data labels and safety limitations were visible.
+
+10. CURRENT STATUS
+Requirement and analysis: 90%
+Design: 90%
+Development: 85%
+Integration: 80%
+Testing: 70%
+Documentation: 70%
+Deployment: Not applicable yet
+Overall project completion: 82%
+
+11. CHALLENGES AND SOLUTIONS
+Challenge: Sample rent figures could look like official data.
+Solution: Added demo-estimate and verify-current-listings wording.
+
+Challenge: Roommate matching could expose personal information.
+Solution: Added request-to-connect instead of showing phone numbers.
+
+Challenge: Agreement review alone did not cover real rental disputes.
+Solution: Added locality, roommate, move-in, payment, repair and move-out workflows.
+
+Challenge: Generic pages made navigation less useful.
+Solution: Removed generic Learn and Rulebook from the main navigation and kept outcome-based pages.
+
+12. FUTURE WORK
+• Connect verified or user-submitted locality data with source and date.
+• Add permanent database tables for roommate listings and evidence records.
+• Add login, consent, privacy and document access controls.
+• Add report, block and moderation features.
+• Add secure in-app messaging.
+• Test with real tenants or students only after consent.
+• Review the rulebook with a qualified legal professional.
+• Add Marathi and Hindi explanations.
+• Add genuine screenshots and final test evidence.
+
+13. LEARNING OUTCOME
+The project showed that a useful civic-tech application should not only explain a problem. It should help the user take the next safe action, keep proof, and understand the limits of the system. The project also helped develop skills in Python, Streamlit, document processing, rule-based analysis, SQLite, UI design, session-state navigation, browser testing and responsible handling of sample data.
+
+14. REFERENCES
+• India Code, The Indian Contract Act, 1872: https://www.indiacode.nic.in
+• India Code, The Registration Act, 1908: https://www.indiacode.nic.in
+• Maharashtra Department of Registration and Stamps: https://igrmaharashtra.gov.in
+• MahaRERA: https://maharera.mahaonline.gov.in
+• Streamlit Documentation: https://docs.streamlit.io
+• Python Documentation: https://docs.python.org
+• pypdf Documentation: https://pypdf.readthedocs.io
+• python-docx Documentation: https://python-docx.readthedocs.io
+
+Reference and originality note: Project explanations were written in original language for this project. Public official sources are listed for background and legal-adjacent references. Demonstration locality, roommate and rent data are not presented as official statistics.
+
+15. EVALUATION
+Work Completion: ____________________
+Methodology Implementation: ____________________
+Tools and Technologies: ____________________
+Documentation: ____________________
+Understanding of Work: ____________________
+Total Marks: ____________________
+
+Student Signature: ____________________
+Mentor Signature: ____________________
+Institute Mentor Signature: ____________________
+Mentor Remarks: ______________________________________________
